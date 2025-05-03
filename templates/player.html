@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Гравець {{ user_id }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Гравець ID {{ user_id }}</h1>
+    {% if stats %}
+        <p>Ігор: {{ stats[3] }}, В: {{ stats[0] }}, П: {{ stats[1] }}, Н: {{ stats[2] }}</p>
+        <h2>Останні ігри</h2>
+        <table>
+            <tr><th>Твій хід</th><th>Суперник</th><th>Хід суперника</th><th>Результат</th><th>Час</th></tr>
+            {% for g in history %}
+                <tr>
+                    <td>{{ g[0] if g[4] == user_id else g[1] }}</td>
+                    <td>{{ g[5] if g[4] == user_id else g[4] }}</td>
+                    <td>{{ g[1] if g[4] == user_id else g[0] }}</td>
+                    <td>{{ g[2] }}</td>
+                    <td>{{ g[3][:16] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>Гравця не знайдено.</p>
+    {% endif %}
+</body>
+</html>
