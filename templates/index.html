@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Топ гравців</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>🏆 Топ-10 гравців</h1>
+    <table>
+        <tr><th>ID</th><th>Ігри</th><th>В</th><th>П</th><th>Н</th></tr>
+        {% for p in players %}
+        <tr>
+            <td><a href="/player/{{ p[0] }}">{{ p[0] }}</a></td>
+            <td>{{ p[4] }}</td>
+            <td>{{ p[1] }}</td>
+            <td>{{ p[2] }}</td>
+            <td>{{ p[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
