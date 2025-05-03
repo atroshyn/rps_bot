@@ -1,4 +1,4 @@
-# Rock Paper Scissors game bot\
+# Rock - Paper - Scissors game bot
 
 ## Як запустити:
 
