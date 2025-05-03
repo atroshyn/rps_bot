@@ -1,0 +1,7 @@
+web_app/
+├── app.py              # Flask-сервер
+├── templates/
+│   ├── index.html      # Головна сторінка
+│   └── player.html     # Сторінка окремого гравця
+└── static/
+    └── style.css       # Стилі
